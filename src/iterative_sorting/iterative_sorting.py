@@ -1,6 +1,7 @@
 # TO-DO: Complete the selection_sort() function below
 
 def selection_sort(arr):
+    # * In-place selection sort
     curr = 0
     while curr < len(arr):
         smallest = curr
@@ -13,6 +14,9 @@ def selection_sort(arr):
     return arr
 
     '''
+    limit = len(arr)
+    queue = []
+    # * Out-of-place selection sort 
     while len(queue) < limit:
         curr_ind = 0
         smallest_ind = curr_ind
@@ -22,7 +26,6 @@ def selection_sort(arr):
 
         queue.append(arr[smallest_ind])
         arr.pop(smallest_ind)
-    print('Mine: ', queue)
     return queue
     '''
 # TO-DO:  implement the Bubble Sort function below
