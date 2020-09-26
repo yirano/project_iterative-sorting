@@ -1,32 +1,16 @@
 # TO-DO: Complete the selection_sort() function below
 
 def selection_sort(arr):
-    # iterate the array and find the smallest value
-    # once that smallest value is found, pull that out and put into queue?
-    queue = []
-    limit = len(arr)
-    print(f'Array')
-    print('Sorted: ', sorted(arr))
-    ct = 0
-    start = 0
     curr = 0
-    while ct < limit:
+    while curr < len(arr):
         smallest = curr
-        for i in range(curr, len(arr)-1):
+        for i in range(curr, len(arr)):
             if (arr[smallest] > arr[i]):
-                print(f'{arr[curr]} > {arr[i]}')
                 smallest = i
-            else:
-                print(f'{arr[curr]} < {arr[i]}')
-                pass
-            print(f'---------')
-            print(f'The Smallest value in round {i}: ', arr[smallest])
-            print(f'----------------------')
-            start += 1
-        queue.append(arr[smallest])
-        ct += 1
+        arr.insert(curr, arr.pop(smallest))
+        curr += 1
 
-    return queue
+    return arr
 
     '''
     while len(queue) < limit:
