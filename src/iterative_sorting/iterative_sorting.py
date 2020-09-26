@@ -35,12 +35,10 @@ def bubble_sort(arr):
     # Bubble sort is "bubbling up" the greater value
     # To solve this I'll want to compare two items
     # and continue iterating through to compare w/the higher value until the end
-    for i in arr:
-        curr = i
-        next = i+1
-        if arr[i] < arr[next]:
-            curr = next
-
+    for i in range(0, len(arr)):
+        for j in range(0, len(arr)):
+            if arr[i] < arr[j]:
+                arr[i], arr[j] = arr[j], arr[i]
 
     return arr
 
