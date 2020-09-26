@@ -7,7 +7,28 @@ def selection_sort(arr):
     limit = len(arr)
     print(f'Array')
     print('Sorted: ', sorted(arr))
+    ct = 0
+    start = 0
+    curr = 0
+    while ct < limit:
+        smallest = curr
+        for i in range(curr, len(arr)-1):
+            if (arr[smallest] > arr[i]):
+                print(f'{arr[curr]} > {arr[i]}')
+                smallest = i
+            else:
+                print(f'{arr[curr]} < {arr[i]}')
+                pass
+            print(f'---------')
+            print(f'The Smallest value in round {i}: ', arr[smallest])
+            print(f'----------------------')
+            start += 1
+        queue.append(arr[smallest])
+        ct += 1
 
+    return queue
+
+    '''
     while len(queue) < limit:
         curr_ind = 0
         smallest_ind = curr_ind
@@ -19,7 +40,7 @@ def selection_sort(arr):
         arr.pop(smallest_ind)
     print('Mine: ', queue)
     return queue
-
+    '''
 # TO-DO:  implement the Bubble Sort function below
 
 
