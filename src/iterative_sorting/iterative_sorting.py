@@ -1,23 +1,28 @@
 # TO-DO: Complete the selection_sort() function below
+
 def selection_sort(arr):
+    # iterate the array and find the smallest value
+    # once that smallest value is found, pull that out and put into queue?
     queue = []
+    limit = len(arr)
+    print(f'Array')
+    print('Sorted: ', sorted(arr))
 
-    # loop through n-1 elements
-    for i in range(0, len(arr) - 2):
-        curr_index = i
-        smallest_index = curr_index
-        # TO-DO: find next smallest element
-        if arr[curr_index] > arr[curr_index + 1]:
-            smallest_index = curr_index + 1
-        # (hint, can do in 3 loc)
-        # Your code here
-        # TO-DO: swap
-        # Your code here
-        curr_index = smallest_index
-    return arr
+    while len(queue) < limit:
+        curr_ind = 0
+        smallest_ind = curr_ind
+        for i in range(1, len(arr)):
+            if arr[smallest_ind] > arr[i]:
+                smallest_ind = i
 
+        queue.append(arr[smallest_ind])
+        arr.pop(smallest_ind)
+    print('Mine: ', queue)
+    return queue
 
 # TO-DO:  implement the Bubble Sort function below
+
+
 def bubble_sort(arr):
     # Your code here
 
