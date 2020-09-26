@@ -32,7 +32,15 @@ def selection_sort(arr):
 
 
 def bubble_sort(arr):
-    # Your code here
+    # Bubble sort is "bubbling up" the greater value
+    # To solve this I'll want to compare two items
+    # and continue iterating through to compare w/the higher value until the end
+    for i in arr:
+        curr = i
+        next = i+1
+        if arr[i] < arr[next]:
+            curr = next
+
 
     return arr
 
