@@ -1,7 +1,6 @@
 def linear_search(arr, target):
     # Your code here
 
-
     return -1   # not found
 
 
@@ -9,6 +8,5 @@ def linear_search(arr, target):
 def binary_search(arr, target):
 
     # Your code here
-
 
     return -1  # not found

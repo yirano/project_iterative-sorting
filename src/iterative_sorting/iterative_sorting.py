@@ -7,8 +7,10 @@ def selection_sort(arr):
         smallest = curr
         for i in range(curr, len(arr)):
             if (arr[smallest] > arr[i]):
-                smallest = i
-        arr.insert(curr, arr.pop(smallest))
+                # smallest = i
+                arr[smallest], arr[i] = arr[i], arr[smallest]
+
+                # arr.insert(curr, arr.pop(smallest))
         curr += 1
 
     return arr
