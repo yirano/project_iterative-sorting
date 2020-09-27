@@ -11,5 +11,9 @@ def linear_search(arr, target):
 def binary_search(arr, target):
 
     # Your code here
+    arr = sorted(arr)
+    center_ind = len(arr) // 2
+    if arr[center_ind] =< target:
+        
 
-    return -1  # not found
+    return arr  # not found
