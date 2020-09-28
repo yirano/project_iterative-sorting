@@ -17,7 +17,7 @@ def selection_sort(arr):
     '''
     limit = len(arr)
     queue = []
-    # * Out-of-place selection sort 
+    # * Out-of-place selection sort
     while len(queue) < limit:
         curr_ind = 0
         smallest_ind = curr_ind
@@ -53,11 +53,11 @@ data. The idea behind this algorithm then is that we can create "buckets"
 from 0 up to the max value. This is most easily done by initializing an
 array of 0s whose length is the max value + 1 (why do we need this "+ 1"?).
 
-Each buckets[i] then is responsible for keeping track of how many times 
+Each buckets[i] then is responsible for keeping track of how many times
 we've seen `i` in the input set of data as we iterate through it.
 Once we know exactly how many times each piece of data in the input set
-showed up, we can construct a sorted set of the input data from the 
-buckets. 
+showed up, we can construct a sorted set of the input data from the
+buckets.
 
 What is the time and space complexity of the counting sort algorithm?
 '''
@@ -84,3 +84,26 @@ def counting_sort(arr, maximum=None):
         sort += ([j] * bucket[j])
 
     return sort
+
+
+# ? Insertion Sorting (from lecture)
+
+def insertion_sort(list_to_sort):
+    # the first element is already in the 'sorted side'
+    # for all other items, we should do things
+    # starting at the second item, iterate until it reaches the end
+    # the curr number at the index represents the value currently being sorted
+    # move the current number back through the array
+    # keep moving until it's greater than the number before it OR the index is zero
+    # shift the current value and the one to left of it
+    # set the avlue at the curr index to the current number
+
+    for i in range(1, len(list_to_sort)):
+        current_num = list_to_sort[i]
+        j = i
+        while j > 0 and current_num < list_to_sort[j-1]:
+            list_to_sort[j] = list_to_sort[j-1]
+            j -= 1
+        list_to_sort[j] = current_num
+
+    return list_to_sort
